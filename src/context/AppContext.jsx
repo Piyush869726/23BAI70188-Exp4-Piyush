@@ -11,15 +11,26 @@ export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
 
   const addTask = (task) => {
-    dispatch({ type: "ADD_TASK", payload: task });
+    dispatch({
+      type: "ADD_TASK",
+      payload: {
+        id: Date.now(),
+        text: task
+      }
+    });
   };
 
   const deleteTask = (id) => {
-    dispatch({ type: "DELETE_TASK", payload: id });
+    dispatch({
+      type: "DELETE_TASK",
+      payload: id
+    });
   };
 
   const clearTasks = () => {
-    dispatch({ type: "CLEAR_TASKS" });
+    dispatch({
+      type: "CLEAR_TASKS"
+    });
   };
 
   return (

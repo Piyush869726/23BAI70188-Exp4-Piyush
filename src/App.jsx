@@ -1,12 +1,12 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Analytics from "./pages/Analytics";
-import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <Router>
+    <div>
       <Navbar />
 
       <Routes>
@@ -14,7 +14,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/analytics" element={<Analytics />} />
       </Routes>
-    </Router>
+    </div>
   );
 }
 
